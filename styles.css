@@ -1,0 +1,68 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: #f7f9fc;
+}
+
+/* Part 1: Button hover transition */
+.btn {
+  padding: 12px 24px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Part 1: Keyframes continuous animation */
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 40px auto;
+  background: tomato;
+  border-radius: 12px;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Part 3: Triggered animations via classes */
+.animate {
+  animation: slide 2s forwards;
+}
+
+@keyframes slide {
+  from { transform: translateX(-200px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.popup.show {
+  top: 100px;
+  opacity: 1;
+}
